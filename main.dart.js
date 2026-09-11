@@ -24316,7 +24316,7 @@ _.f=f
 _.r=g
 _.w=h
 _.x=i},
-acW:function acW(){},
+acW:function acW(a){this.a=a},
 JX:function JX(){},
 a71:function a71(a){this.a=a},
 aMC(a,b,c){return A.anz(new A.aoc(a,c,b,null),t.Wd)},
@@ -80167,7 +80167,8 @@ A.AH.prototype={
 ah(){return A.aJ2()}}
 A.E6.prototype={
 ga2_(){var s=this.at
-return s===$?this.at=new A.acW():s},
+if(s===$)s=this.at=new A.acW("https://api.example.com")
+return s},
 l(){var s,r,q,p,o=this
 for(s=A.c([o.e,o.f,o.r,o.w,o.x,o.y,o.z,o.Q],t.PF),B.b.R(s,o.as),r=s.length,q=0;q<r;++q){p=s[q]
 p.n$=$.ao()
@@ -80191,8 +80192,8 @@ s.toString
 r=A.hv(s)
 r.toString
 q=q.wF(r)}if(q===!0)this.aj(new A.am1(this))},
-oL(){var s=0,r=A.P(t.H),q,p=2,o=[],n=this,m,l,k,j,i,h,g,f,e,d,c
-var $async$oL=A.Q(function(a,b){if(a===1){o.push(b)
+oL(){var s=0,r=A.P(t.H),q,p=2,o=[],n=this,m,l,k,j,i,h,g,f,e,d,c,b,a
+var $async$oL=A.Q(function(a0,a1){if(a0===1){o.push(a1)
 s=p}for(;;)switch(s){case 0:n.aj(new A.alW(n))
 p=4
 m=n.aem()
@@ -80201,23 +80202,24 @@ s=7
 return A.S(g.HC(m),$async$oL)
 case 7:s=8
 return A.S(g.zY(m),$async$oL)
-case 8:l=b
+case 8:l=a1
 k=A.cg(J.h3(l,"zip_url"))
-if(k!=null)n.cy="http://localhost:8000"+k
-g=t.kc.a(J.h3(l,"documents"))
-g=J.bE(g==null?B.jZ:g)
-f=t.a
-e=n.db
-while(g.t()){j=g.gO()
-i=f.a(j)
+if(k!=null)n.cy=g.a+k
+f=t.kc.a(J.h3(l,"documents"))
+f=J.bE(f==null?B.jZ:f)
+e=t.a
+d=n.db
+while(f.t()){j=f.gO()
+i=e.a(j)
 h=A.cg(J.h3(i,"document_type"))
-if(h!=null){e.m(0,h+".xlsx","http://localhost:8000"+A.j(J.h3(i,"xlsx_url")))
-e.m(0,h+".pdf","http://localhost:8000"+A.j(J.h3(i,"pdf_url")))}}n.CW=n.cy!=null
+if(h!=null){c=g.a
+d.m(0,h+".xlsx",c+A.j(J.h3(i,"xlsx_url")))
+d.m(0,h+".pdf",c+A.j(J.h3(i,"pdf_url")))}}n.CW=n.cy!=null
 p=2
 s=6
 break
 case 4:p=3
-c=o.pop()
+a=o.pop()
 n.cx="The document package could not be generated. Check that the backend is running and try again."
 s=6
 break
@@ -80412,16 +80414,16 @@ break
 case 1:return A.N(q,r)}})
 return A.O($async$zY,r)},
 rr(a,b){return this.abP(a,b)},
-abP(a,b){var s=0,r=A.P(t.a),q,p,o,n
+abP(a,b){var s=0,r=A.P(t.a),q,p=this,o,n,m
 var $async$rr=A.Q(function(c,d){if(c===1)return A.M(d,r)
-for(;;)switch(s){case 0:p=t.N
-o=A.ap(["Content-Type","application/json"],p,p)
+for(;;)switch(s){case 0:o=t.N
+n=A.ap(["Content-Type","application/json"],o,o)
 s=3
-return A.S(A.aMC(A.eC("http://localhost:8000"+a,0,null),B.d0.Tb(b.hU(),null),o),$async$rr)
-case 3:n=d
-p=n.b
-if(p<200||p>=300)throw A.i(A.de("Preview request failed with status "+p))
-q=t.a.a(B.d0.SE(A.aLO(A.aJP(n.e)).fJ(n.w),null))
+return A.S(A.aMC(A.eC(p.a+a,0,null),B.d0.Tb(b.hU(),null),n),$async$rr)
+case 3:m=d
+o=m.b
+if(o<200||o>=300)throw A.i(A.de("Preview request failed with status "+o))
+q=t.a.a(B.d0.SE(A.aLO(A.aJP(m.e)).fJ(m.w),null))
 s=1
 break
 case 1:return A.N(q,r)}})
